@@ -1,8 +1,16 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const StateContext = createContext(null)
 
 const ContextProvider = ({ children }) => {
+    const [theme, setTheme] = useState('light')
+    
+    useEffect(()=>{
+        localStorage.setItem('theme', theme)
+        const localTheme = localStorage.getItem('theme')
+        document.querySelector('html').setAttribute('data-theme', localTheme)
+    },[theme])
+
     const [data, setData] = useState({
         "CSPM": [
             { "id": 1, "name": "Compliance Status", "type": "barChart", "content": "Bar chart showing compliance status across environments." },
@@ -26,6 +34,8 @@ const ContextProvider = ({ children }) => {
     const [filteredWidgets, setFilteredWidgets] = useState([]);
 
     const info = {
+        theme, 
+        setTheme,
         data, 
         setData,
         searchQuery, 
