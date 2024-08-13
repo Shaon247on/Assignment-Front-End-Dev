@@ -33,14 +33,28 @@ const Dashboard = () => {
                     data.map(widgets =>
                         <>
                             <div>
-                                <h1 className='text-lg font-semibold'>widgets.</h1>
+                                <h1 className='text-lg font-semibold'>{widgets.Category}</h1>
+
                                 <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                                    <div className='border-2 border-emerald-200 rounded-lg'>I'm a</div>
-                                    <div className='border-2 border-emerald-200 rounded-lg'>I'm a</div>
-                                    <div className='border-2 border-emerald-200 rounded-lg'>I'm a</div>
+                                    {
+                                        widgets.Widgets.map(Widget =>
+                                            <>
+                                                <div className='border-2 border-emerald-200 rounded-lg'>
+                                                    <h1>{Widget?.name}</h1>
+                                                    <h1>{Widget?.content}</h1>
+                                                </div>
+                                            </>
+                                        )
+                                    }
+                                    <div className='border-2 border-emerald-200 rounded-lg flex items-center justify-center'>
+                                        <button className="btn">Add Widget</button>
+                                    </div>
                                 </div>
+
+
                             </div>
-                        </>)
+                        </>
+                    )
                 }
 
             </div>

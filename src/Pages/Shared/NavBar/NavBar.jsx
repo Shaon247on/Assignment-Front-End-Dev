@@ -52,20 +52,6 @@ const NavBar = () => {
         setFilteredWidgets(filtered);
 
         console.log(filtered);
-
-
-
-
-
-        // const allWidgets = Object.values(data).flat()
-        // console.log(allWidgets);
-
-
-        // const result = allWidgets.filter(widget => widget.name.toLowerCase().includes(e.toLowerCase()))
-        // console.log(result);
-
-        // setFilteredWidgets(result)
-        // console.log(filteredWidgets.length);
     }
     const handleBlur = () => {
         setToggle(false)
