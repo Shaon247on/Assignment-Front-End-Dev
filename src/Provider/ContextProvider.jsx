@@ -9,16 +9,16 @@ const ContextProvider = ({ children }) => {
             { "id": 2, "name": "Risk Overview", "type": "text", "content": "Summary of risks identified in the cloud infrastructure." }
         ],
         "CWPP": [
-            { "id": 1, "name": "Vulnerability Scans", "type": "pieChart", "content": "Pie chart showing the results of vulnerability scans." },
-            { "id": 2, "name": "Runtime Protection", "type": "text", "content": "Overview of runtime protection mechanisms in place." }
+            { "id": 3, "name": "Vulnerability Scans", "type": "pieChart", "content": "Pie chart showing the results of vulnerability scans." },
+            { "id": 4, "name": "Runtime Protection", "type": "text", "content": "Overview of runtime protection mechanisms in place." }
         ],
         "Image": [
-            { "id": 1, "name": "Docker Image Security", "type": "barChart", "content": "Bar chart displaying security status of Docker images." },
-            { "id": 2, "name": "Image Scanning Results", "type": "text", "content": "Detailed results of image scanning processes." }
+            { "id": 5, "name": "Docker Image Security", "type": "barChart", "content": "Bar chart displaying security status of Docker images." },
+            { "id": 6, "name": "Image Scanning Results", "type": "text", "content": "Detailed results of image scanning processes." }
         ],
         "Ticket": [
-            { "id": 1, "name": "Open Tickets", "type": "list", "content": "List of open security tickets." },
-            { "id": 2, "name": "Resolved Tickets", "type": "text", "content": "Overview of recently resolved security tickets." }
+            { "id": 7, "name": "Open Tickets", "type": "list", "content": "List of open security tickets." },
+            { "id": 8, "name": "Resolved Tickets", "type": "text", "content": "Overview of recently resolved security tickets." }
         ]
     });
 
