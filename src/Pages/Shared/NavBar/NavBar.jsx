@@ -18,14 +18,14 @@ const NavBar = () => {
                 borderRadius: '5px',
                 backgroundColor: isActive ? 'blue' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
-            })}><li>Home</li></NavLink>
+            })}><li className='text-sm md:text-base'>Home</li></NavLink>
             <NavLink to='/dashboard' style={({ isActive }) => ({
                 color: isActive ? 'white' : 'black',
                 padding: '4px 10px',
                 borderRadius: '5px',
                 backgroundColor: isActive ? 'blue' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
-            })}><li>Dashboard</li></NavLink>
+            })}><li className='text-sm md:text-base'>Dashboard</li></NavLink>
         </>
     const handleSearch = (e) => {
         
@@ -61,7 +61,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="flex-none gap-2">
+                <div className="flex-none gap-2 relative">
                     <div className="form-control">
                         <input
                             type="text"
@@ -72,11 +72,11 @@ const NavBar = () => {
                             className="input input-bordered w-24 md:w-auto"
                             onChange={(e) => handleSearch(e.target.value)}
                         />
-                        <div className={`${toggle === false? "hidden": "block"} absolute bg-white px-5 rounded-lg top-20`}>
+                        <div className={`${toggle === false? "hidden": "block"} absolute bg-gray-200 border-2 border-red-300 w-48 px-5 py-2 rounded-lg top-16 -left-20 md:left-0`}>
                             {
                                 filteredWidgets.length > 0 ? (filteredWidgets.map(widget =>
                                     <div key={widget.id}>
-                                        <h3>{widget.name}</h3>
+                                        <h3 className='text-sm md:text-base'>{widget.name}</h3>
                                     </div>
                                 )) :
                                     <p>No widgets found</p>
