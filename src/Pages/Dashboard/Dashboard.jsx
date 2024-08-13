@@ -3,7 +3,7 @@ import useProvider from '../../Hooks/useProvider';
 
 const Dashboard = () => {
     const {data} =  useProvider()
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             This Is DashBoard

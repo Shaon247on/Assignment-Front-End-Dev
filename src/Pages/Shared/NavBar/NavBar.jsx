@@ -1,7 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useProvider from '../../../Hooks/useProvider';
 
 const NavBar = () => {
+    const {data, 
+        setData,
+        searchQuery, 
+        setSearchQuery,
+        filteredWidgets, 
+        setFilteredWidgets} = useProvider()
     const navLinks =
         <>
             <NavLink to='/' style={({ isActive }) => ({
@@ -19,6 +26,20 @@ const NavBar = () => {
           fontWeight: isActive ? '700' : '400',
         })}><li>Dashboard</li></NavLink>
         </>
+const handleSearch = (e)=>{
+    // console.log(e);
+    setSearchQuery(e)
+
+    const allWidgets = Object.values(data).flat()
+    // console.log(allWidgets);
+
+    const result = allWidgets.filter(widget=> widget.name.toLowerCase().includes(e.toLowerCase()))
+    // console.log(result);
+
+    setFilteredWidgets(result)
+
+}
+
     return (
         <>
             <div className="navbar bg-base-100 font-bold">
@@ -31,7 +52,13 @@ const NavBar = () => {
                 </div>
                 <div className="flex-none gap-2">
                     <div className="form-control">
-                        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                        <input 
+                        type="text" 
+                        placeholder="Search" 
+                        value={searchQuery}
+                        className="input input-bordered w-24 md:w-auto" 
+                        onChange={(e)=> handleSearch(e.target.value)}
+                        />
                     </div>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
