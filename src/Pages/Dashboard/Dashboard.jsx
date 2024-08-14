@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 // ----------------- React icons -----------------
 
@@ -7,10 +7,25 @@ import { LuRefreshCcw } from "react-icons/lu";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa6";
 import { MdWatchLater } from "react-icons/md";
+import { ImCross } from "react-icons/im";
+import AddWidgets from './AddWidgets';
 
 const Dashboard = () => {
-    const { data } = useProvider()
-    // console.log(data);
+
+    const { data, setData } = useProvider()
+    
+    
+    const handleRemoveWidget = (id)=> {
+        console.log(id);
+        const updatedWidgets = data.map(category=>{
+            return{
+                ...category, Widgets:category.Widgets.filter(Widget=> Widget.id!== id)
+            }
+        })
+        setData(updatedWidgets)
+    }
+
+
     return (
         <div className='px-1 md:px-6'>
             <div className='flex justify-between items-center'>
@@ -30,33 +45,30 @@ const Dashboard = () => {
             </div>
             <div className=' my-5 px-2'>
                 {
-                    data.map(widgets =>
-                        <>
-                            <div>
+                    data.map((widgets, index) =>
+                        
+                            <div key={index}>
                                 <h1 className='text-lg font-semibold'>{widgets.Category}</h1>
-
                                 <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                                     {
                                         widgets.Widgets.map(Widget =>
-                                            <>
-                                                <div className='border-2 border-emerald-200 rounded-lg'>
+                                            
+                                                <div key={Widget.id} className='h-[150px] border-2 border-emerald-200 rounded-lg relative py-7 px-4'>
                                                     <h1>{Widget?.name}</h1>
                                                     <h1>{Widget?.content}</h1>
+                                                    <button onClick={()=>handleRemoveWidget(Widget.id)} className='btn absolute top-1 right-1'><ImCross/></button>
                                                 </div>
-                                            </>
+                                           
                                         )
                                     }
-                                    <div className='border-2 border-emerald-200 rounded-lg flex items-center justify-center'>
-                                        <button className="btn">Add Widget</button>
+                                    <div className='h-[150px] border-2 border-emerald-200 rounded-lg flex items-center justify-center'>
+                                        <AddWidgets category={widgets.Category}></AddWidgets>
                                     </div>
                                 </div>
-
-
                             </div>
-                        </>
+                       
                     )
                 }
-
             </div>
         </div>
     );

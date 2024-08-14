@@ -21,15 +21,13 @@ const NavBar = () => {
         setFilteredWidgets } = useProvider()
     const navLinks =
         <>
-            <NavLink to='/' style={({ isActive }) => ({
-                color: isActive ? 'white' : 'black',
+            <NavLink to='/' style={({ isActive }) => ({   
                 padding: '4px 10px',
                 borderRadius: '5px',
                 backgroundColor: isActive ? '#5cbbc8' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
-            })}><li className='text-sm md:text-base'>Home</li></NavLink>
-            <NavLink to='/dashboard' style={({ isActive }) => ({
-                color: isActive ? 'white' : 'black',
+            })}><li className='text-sm md:text-base'>Home</li></NavLink>            
+            <NavLink to='/dashboard' style={({ isActive }) => ({               
                 padding: '4px 10px',
                 borderRadius: '5px',
                 backgroundColor: isActive ? '#5cbbc8' : 'transparent',
@@ -44,6 +42,7 @@ const NavBar = () => {
                 widget.name.toLowerCase().includes(query.toLowerCase()));
 
             // Return category only if it has matching widgets
+
             return filteredWidgets.length > 0
                 ? { ...category, Widgets: filteredWidgets }
                 : null;
@@ -200,7 +199,6 @@ const NavBar = () => {
                     {/*----------------- Login Button ----------------- */}
 
                     <a className="btn">Button</a>
-
                 </div>
             </div>
         </>
