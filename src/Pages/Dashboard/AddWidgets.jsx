@@ -2,74 +2,59 @@ import React from 'react';
 import useProvider from '../../Hooks/useProvider';
 import InputFiend from '../../Components/inputFiend';
 
-const AddWidgets = ({category}) => {
-
-    console.log(category);
-    const { data, setData } = useProvider()
+const AddWidgets = ({ category }) => {
     
-    
-    const handleAddWidget = (e)=> {
-        e.preventDefault()
-        const form = e.target
-        const name = form.name.value
-        const content = form.content.value
+    const { data, setData } = useProvider();
 
-        // console.log(name, content);
+    const handleAddWidget = (e) => {
+        e.preventDefault();
+        console.log(category);
+        const form = e.target;
+        const name = form.name.value;
+        const content = form.content.value;
 
-        const allWidgets = data.reduce((acc, currentCategory)=>{
-            return acc.concat(currentCategory.Widgets)
-        },[])
-
-        // console.log(allWidgets);
+        const allWidgets = data.reduce((acc, currentCategory) => {
+            return acc.concat(currentCategory.Widgets);
+        }, []);
 
         const newWidget = {
             id: allWidgets.length + 1,
-            name: name, 
+            name: name,
             type: category,
-            content: content           
-        }
+            content: content,
+        };
 
-        // console.log(newWidget);
-
-        const updatedWidgets = data.map(type=>{
-            if(type.Category === category){
-
-                return {...type,Widgets: [...type.Widgets, newWidget]};
+        const updatedData = data.map((type) => {
+            if (type.Category === category) {
+                return { ...type, Widgets: [...type.Widgets, newWidget] };
             }
+            return type;
+        });
 
-            return type
-        })
-
-        setData(updatedWidgets)
-
-        // console.log(data);
-    }
+        setData(updatedData);
+    };
 
     return (
         <div>
-            <button className="btn" onClick={() => document.getElementById('my_modal_5').showModal()}>Add Widget +</button>
+            <button className="btn" onClick={() => document.getElementById(`modal_${category}`).showModal()}>Add Widget +</button>
 
-            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+            <dialog id={`modal_${category}`} className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    {/* -------------- Modal body area -------------- */}
-
                     <h3 className="font-bold text-xl mb-4">Add Your Custom Widget</h3>
                     <form onSubmit={handleAddWidget}>
-                        <InputFiend name='name' title='Name' placeholder='Widget Name' type='text'></InputFiend>
-                        <InputFiend name='content' title='Content' placeholder='Widget Content' type='text'></InputFiend>
+                        <InputFiend name='name' title='Name' placeholder='Widget Name' type='text' />
+                        <InputFiend name='content' title='Content' placeholder='Widget Content' type='text' />
                         <button className="btn" type='submit'>Submit</button>
                     </form>
-                    
+
                     <div className="modal-action">
                         <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
                             <button className="btn">Close</button>
                         </form>
                     </div>
                 </div>
             </dialog>
         </div>
-
     );
 };
 

@@ -23,7 +23,7 @@ const ContextProvider = ({ children }) => {
             "Category": "CSPM Executive Dashboard",
             "Widgets": [
                 { "id": 1, "name": "Compliance Status", "type": "CSPM", "content": "Bar chart showing compliance status across environments." },
-                { "id": 2, "name": "Risk Overview", "type": "text", "type": "CSPM", "content": "Summary of risks identified in the cloud infrastructure." }
+                { "id": 2, "name": "Risk Overview", "type": "text", "type": "CSPM", "content": "Summary of risks identified in the cloud infrastructure." },
             ]
         },
         {
