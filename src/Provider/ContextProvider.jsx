@@ -20,31 +20,31 @@ const ContextProvider = ({ children }) => {
 
     const [data, setData] = useState([
         {
-            "Category": "CSPM Executive Dashboard",
+            "Category": "CSPM Executive",
             "Widgets": [
-                { "id": 1, "name": "Compliance Status", "type": "CSPM", "content": "Bar chart showing compliance status across environments." },
-                { "id": 2, "name": "Risk Overview", "type": "text", "type": "CSPM", "content": "Summary of risks identified in the cloud infrastructure." },
+                { "id": 1, "name": "Compliance Status", "type": "CSPM", "content": "Bar chart showing compliance status across environments.", "approval": true },
+                { "id": 2, "name": "Risk Overview", "type": "text", "type": "CSPM", "content": "Summary of risks identified in the cloud infrastructure.", "approval": true },
             ]
         },
         {
-            "Category": "CWPP Dashboard",
+            "Category": "CWPP",
             "Widgets": [
-                { "id": 3, "name": "Vulnerability Scans", "type": "CWPP", "content": "Pie chart showing the results of vulnerability scans." },
-                { "id": 4, "name": "Runtime Protection", "type": "CWPP", "content": "Overview of runtime protection mechanisms in place." }
+                { "id": 3, "name": "Vulnerability Scans", "type": "CWPP", "content": "Pie chart showing the results of vulnerability scans.", "approval": true },
+                { "id": 4, "name": "Runtime Protection", "type": "CWPP", "content": "Overview of runtime protection mechanisms in place.", "approval": true }
             ],
         },
         {
             "Category": "Image",
             "Widgets": [
-                { "id": 5, "name": "Docker Image Security", "type": "Image", "content": "Bar chart displaying security status of Docker images." },
-                { "id": 6, "name": "Image Scanning Results", "type": "Image", "content": "Detailed results of image scanning processes." }
+                { "id": 5, "name": "Docker Image Security", "type": "Image", "content": "Bar chart displaying security status of Docker images.", "approval": true },
+                { "id": 6, "name": "Image Scanning Results", "type": "Image", "content": "Detailed results of image scanning processes.", "approval": true }
             ],
         },
         {
             "Category": "Ticket",
             "Widgets": [
-                { "id": 7, "name": "Open Tickets", "type": "Ticket", "content": "List of open security tickets." },
-                { "id": 8, "name": "Resolved Tickets", "type": "Ticket", "content": "Overview of recently resolved security tickets." }
+                { "id": 7, "name": "Open Tickets", "type": "Ticket", "content": "List of open security tickets.", "approval": true },
+                { "id": 8, "name": "Resolved Tickets", "type": "Ticket", "content": "Overview of recently resolved security tickets.", "approval": true }
             ]
         }
 

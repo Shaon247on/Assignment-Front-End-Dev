@@ -22,6 +22,7 @@ const AddWidgets = ({ category }) => {
             name: name,
             type: category,
             content: content,
+            approval: true
         };
 
         const updatedData = data.map((type) => {
