@@ -11,18 +11,9 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 
 ## Features
 
-- Simple and easy usable Home Page.
-- Our Website have a particular section for each property.
-- Dedicated details page for each Country.
-- My List section will show the list of only those that are been added by the current user logged in.
-- The use that have added the locations his name and email will be shown at the top of the my List page.
-- Admin have control over publishing contest.
-- contest creator will decide the winner from dashboard.
-- user will able to submit google link for task.
-- Dynamic deadline.
-- gitHub login and captcha added in the login page.
-
-
+- Easily add, remove, and personalize widgets to create a dashboard that meets your specific security needs.
+- Seamlessly manage your widgets with options to enable or disable them, ensuring your dashboard only displays the most relevant information.
+- Navigate through an intuitive interface that simplifies complex cloud security management, making it accessible for users of all levels.
 
 
 
@@ -33,13 +24,20 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 
 ## npm Packages used for the Challenges part:
 
-🧠 React Hook form
+🧠 React Router Dom
 
 👩‍💻 animate.css
 
-🗺️ sweet-alart2
+🗺️ React Icons
 
-🏃‍♂️ swiper.js
+
+## How To Run In Your LocalHost 🏃‍♂️
+
+- Step-1: "git clone" => Clone the Repo using "Clone_Link"
+- Step-2: "npm i" => To install all the NPM Packages.
+- Step-3: "npm run dev" & "o"+ "Enter" => Run the site in your LocalHost.
+
+
 
 
 
