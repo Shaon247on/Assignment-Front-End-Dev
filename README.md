@@ -5,8 +5,8 @@
 
 Live Site Link: https://assignment-front-end-trainee.surge.sh
 
-## 🚀 About Me
-I'm aminul Islam Shaon, an student who is giving his full potentiality to learn Web Development.
+## About Me
+As a dedicated student with a strong passion for web development, I am eager to learn and continuously improve my skills. I am actively seeking opportunities to launch my career as a web developer, where I can contribute and grow in a professional environment.
 
 
 ## Features
