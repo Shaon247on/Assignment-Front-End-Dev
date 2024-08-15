@@ -7,9 +7,6 @@ import logo2 from '../../../assets/FW (1).png';
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
 
-
-
-
     const {
         theme,
         setTheme,
@@ -39,9 +36,7 @@ const NavBar = () => {
 
         const filtered = data.map(category => {
             const filteredWidgets = category.Widgets.filter(widget =>
-                widget.name.toLowerCase().includes(query.toLowerCase()));
-
-            // Return category only if it has matching widgets
+                widget.name.toLowerCase().includes(query.toLowerCase()));          
 
             return filteredWidgets.length > 0
                 ? { ...category, Widgets: filteredWidgets }
@@ -91,7 +86,7 @@ const NavBar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
+                            className="menu z-30 menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
                             {navLinks}
                             <div className="flex-none gap-2 relative inline-block md:hidden">
                                 <div className="form-control">
@@ -104,7 +99,7 @@ const NavBar = () => {
                                         className=" w-full px-3 py-2 placeholder-[#5cbbc8] focus:placeholder-transparent border-b-[#5cbbc8] border-b focus:border-b-[#5cbbc8] duration-150  focus:border-b-4 hover:border-b-[#5cbbc8] hover:border-b-4 outline-none bg-transparent"
                                         onChange={(e) => handleSearch(e.target.value)}
                                     />
-                                    <div className={`${toggle === false ? "hidden" : "block"} absolute bg-gray-200 w-48 px-5 py-2 rounded-lg z-30 top-10 md:top-16 left-0 md:left-0`}>
+                                    <div className={`${toggle === false ? "hidden" : "block"} absolute bg-gray-200 w-48 px-5 py-2 rounded-lg z-30 top-10 md:top-16 left-0 md:left-20`}>
                                         {
                                             filteredWidgets.length > 0 ?
                                                 filteredWidgets.map((category, index) => (
@@ -177,7 +172,7 @@ const NavBar = () => {
                                 className=" w-full px-3 py-2 placeholder-[#5cbbc8] focus:placeholder-transparent border-b-[#5cbbc8] border-b focus:border-b-[#5cbbc8] duration-150  focus:border-b-4 hover:border-b-[#5cbbc8] hover:border-b-4 outline-none bg-transparent"
                                 onChange={(e) => handleSearch(e.target.value)}
                             />
-                            <div className={`${toggle === false ? "hidden" : "block"} absolute bg-gray-200 w-48 px-5 py-2 rounded-lg top-16 -left-20 md:left-0`}>
+                            <div className={`${toggle === false ? "hidden" : "block"} absolute bg-gray-200 w-48 px-5 py-2 rounded-lg top-16 z-30 -left-20 md:left-0`}>
                                 {
                                     filteredWidgets.length > 0 ?
                                         filteredWidgets.map((category, index) => (
@@ -198,7 +193,7 @@ const NavBar = () => {
 
                     {/*----------------- Login Button ----------------- */}
 
-                    <a className="btn">Login</a>
+                    <a className="btn animation-hover text-white font-semibold">Login</a>
                 </div>
             </div>
         </>

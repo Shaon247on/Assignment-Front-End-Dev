@@ -34,18 +34,18 @@ const CustomizedWidgets = () => {
             <div className="drawer drawer-end z-10">
                 <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer-4" className="px-4 py-2 rounded-lg border-2 flex gap-4 items-center">
+                    <label htmlFor="my-drawer-4" className="px-4 py-2 rounded-lg border-2 flex gap-4 items-center animation-hover cursor-pointer text-white font-semibold">
                         Add Widget <FaPlus />
                     </label>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                     <div className='menu bg-base-200 text-base-content min-h-full w-[310px] md:w-[350px] lg:w-[450px]'>
-                        <div className='bg-blue-800 text-white -mx-2 pl-5 h-12 -mt-2 flex items-center'>
+                        <div className='bg-[#5cbbc8] text-white -mx-2 pl-5 h-12 -mt-2 flex items-center'>
                             <p className='text-lg font-medium'>Add Widgets</p>
                         </div>
                         <div>
-                            <h1 className='font-semibold'>Personalize your dashboard by adding the following widgets</h1>
+                            <h1 className='font-semibold my-4'>Personalize your dashboard by adding the following widgets</h1>
                             <div role="tablist" className="tabs tabs-bordered">
                                 {data.map((category, index) => (
                                     <React.Fragment key={index}>
@@ -76,7 +76,7 @@ const CustomizedWidgets = () => {
                                         </div>
                                     ))}
                             </div>
-                            <button onClick={handleContinue} className="btn mt-4">Continue</button>
+                            <button onClick={handleContinue} className="animation-hover px-4 py-2 rounded-lg text-white mt-4">Continue</button>
                         </div>
                     </div>
                 </div>

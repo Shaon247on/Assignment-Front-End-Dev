@@ -1,6 +1,9 @@
 import React from 'react';
 import useProvider from '../../Hooks/useProvider';
 import InputFiend from '../../Components/inputFiend';
+import Swal from 'sweetalert2';
+import { Store } from 'react-notifications-component';
+import 'animate.css';
 
 const AddWidgets = ({ category }) => {
     
@@ -32,12 +35,26 @@ const AddWidgets = ({ category }) => {
             return type;
         });
 
-        setData(updatedData);
+        setData(updatedData);      
+        Store.addNotification({
+            title: "Wonderful!",
+            message: "hello",
+            type: "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 5000,
+              onScreen: true
+            }
+          });  
+        
     };
 
     return (
         <div>
-            <button className="btn" onClick={() => document.getElementById(`modal_${category}`).showModal()}>Add Widget +</button>
+            <button className="btn animation-hover cursor-pointer text-white" onClick={() => document.getElementById(`modal_${category}`).showModal()}>Add Widget +</button>
 
             <dialog id={`modal_${category}`} className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
@@ -45,7 +62,7 @@ const AddWidgets = ({ category }) => {
                     <form onSubmit={handleAddWidget}>
                         <InputFiend name='name' title='Name' placeholder='Widget Name' type='text' />
                         <InputFiend name='content' title='Content' placeholder='Widget Content' type='text' />
-                        <button className="btn" type='submit'>Submit</button>
+                        <button className="animation-hover mt-4 px-4 py-2 rounded-lg text-white" type='submit'>Submit</button>
                     </form>
 
                     <div className="modal-action">
