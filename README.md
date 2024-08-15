@@ -1,5 +1,6 @@
 
-![Future Widgets](https://i.ibb.co/Zx2X2b6/Victory-Vault.png)
+
+![Future Widgets](https://i.ibb.co/7Gm4MyD/Future-Widgets.png)
 
 
 Live Site Link: https://assignment-front-end-trainee.surge.sh
@@ -17,9 +18,9 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 - The use that have added the locations his name and email will be shown at the top of the my List page.
 - Admin have control over publishing contest.
 - contest creator will decide the winner from dashboard.
-- user will able to submite google link for task.
+- user will able to submit google link for task.
 - Dynamic deadline.
-- gitHub login and caprcha added in the login page.
+- gitHub login and captcha added in the login page.
 
 
 
