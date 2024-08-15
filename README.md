@@ -2,7 +2,7 @@
 ![Future Widgets](https://i.ibb.co/Zx2X2b6/Victory-Vault.png)
 
 
-Live Site Link: https://assignment-12-supremacy.web.app
+Live Site Link: https://assignment-front-end-trainee.surge.sh
 
 ## 🚀 About Me
 I'm aminul Islam Shaon, an student who is giving his full potentiality to learn Web Development.
